@@ -1,23 +1,27 @@
 {
-  "name": "starter-ts-cli",
+  "name": "changelog-notify",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.0",
   "packageManager": "pnpm@7.9.0",
-  "description": "Starter template for TypeScript command line interface library",
+  "description": "Notify webhook of your git change log",
   "author": "wxm",
   "license": "MIT",
-  "homepage": "https://github.com/qq15725/starter-ts-cli",
+  "homepage": "https://github.com/qq15725/changelog-notify",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/qq15725/starter-ts-cli.git"
+    "url": "git+https://github.com/qq15725/changelog-notify.git"
   },
   "engines": {
     "node": ">=14.18.1"
   },
   "bugs": {
-    "url": "https://github.com/qq15725/starter-ts-cli/issues"
+    "url": "https://github.com/qq15725/changelog-notify/issues"
   },
-  "keywords": [],
+  "keywords": [
+    "changelog",
+    "notify",
+    "webhook"
+  ],
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
@@ -28,7 +32,7 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "bin": {
-    "cli": "./bin/index.mjs"
+    "changelog-notify": "./bin/index.mjs"
   },
   "files": [
     "bin",

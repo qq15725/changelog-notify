@@ -21,10 +21,12 @@
 ## 📦 Install
 
 ```shell
-npm i changelog-notify
+npm i -g changelog-notify
 ```
 
 ## 🦄 Usage
+
+cd you-project
 
 ```shell
 changelog-notify "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=you-key" \

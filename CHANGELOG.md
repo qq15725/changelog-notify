@@ -1,3 +1,12 @@
+## [0.0.4](https://github.com/qq15725/changelog-notify/compare/v0.0.3...v0.0.4) (2023-03-16)
+
+
+### Bug Fixes
+
+* typo ([ba9ad28](https://github.com/qq15725/changelog-notify/commit/ba9ad2827e2e694826dcd446769f00cda3233460))
+
+
+
 ## [0.0.3](https://github.com/qq15725/changelog-notify/compare/v0.0.1...v0.0.3) (2023-03-16)
 
 

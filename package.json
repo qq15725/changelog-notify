@@ -1,7 +1,7 @@
 {
   "name": "changelog-notify",
   "type": "module",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "packageManager": "pnpm@7.9.0",
   "description": "Notify the git change log to your web hook",
   "author": "wxm",

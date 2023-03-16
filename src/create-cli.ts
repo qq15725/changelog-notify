@@ -49,7 +49,7 @@ export function createCli(options: Options) {
         execSync(
           [
             'git', 'log',
-            prev ? `${ prev }..${ current }` : '',
+            prev ? `${ prev }..${ current }` : '-10',
             '--no-merges',
             `--pretty=format:"${ format }"`,
           ].filter(Boolean).join(' '),

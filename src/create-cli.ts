@@ -2,6 +2,7 @@ import { execSync } from 'node:child_process'
 import https from 'node:https'
 import http from 'node:http'
 import path from 'node:path'
+import os from 'node:os'
 import { URL } from 'node:url'
 import consola from 'consola'
 import { cac } from 'cac'
@@ -28,9 +29,9 @@ export function createCli(options: Options) {
   const cli = cac(Object.keys(bin)[0])
 
   cli
-    .command('[webhook]', 'changelog notify')
-    .option('-f, --format <format>', 'Pretty format for git log option')
-    .option('-t, --title <title>', 'Notify title')
+    .command('[webhook]', 'Notify the gif change log to your web hook')
+    .option('-f, --format <format>', 'Pretty format option for git log')
+    .option('-t, --title <title>', 'Title')
     .action(async (webhook, commandOptions) => {
       const {
         title = options.title || '',
@@ -43,15 +44,18 @@ export function createCli(options: Options) {
         { encoding: 'utf-8' },
       ).trim()
 
-      const content = title + execSync(
-        [
-          'git', 'log',
-          prev ? `${ prev }..${ current }` : '',
-          '--no-merges',
-          `--pretty=format:"${ format }"`,
-        ].filter(Boolean).join(' '),
-        { encoding: 'utf-8' },
-      ).trim()
+      const content = [
+        title,
+        execSync(
+          [
+            'git', 'log',
+            prev ? `${ prev }..${ current }` : '',
+            '--no-merges',
+            `--pretty=format:"${ format }"`,
+          ].filter(Boolean).join(' '),
+          { encoding: 'utf-8' },
+        ).trim(),
+      ].filter(Boolean).join(os.EOL)
 
       cache(cachePath, current)
 

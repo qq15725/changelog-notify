@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.2",
   "packageManager": "pnpm@7.9.0",
-  "description": "Notify webhook of your git change log",
+  "description": "Notify the gif change log to your web hook",
   "author": "wxm",
   "license": "MIT",
   "homepage": "https://github.com/qq15725/changelog-notify",

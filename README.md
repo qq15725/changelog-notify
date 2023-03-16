@@ -20,15 +20,15 @@
 
 ## 📦 Install
 
-```shell
+```sh
 npm i -g changelog-notify
 ```
 
 ## 🦄 Usage
 
-cd you-project
+```sh
+cd you-project-root
 
-```shell
 changelog-notify "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=you-key" \
   --title="### ✅ CI" \
   --format="\n> #%h %s (@%an)"

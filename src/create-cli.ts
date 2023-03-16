@@ -29,7 +29,7 @@ export function createCli(options: Options) {
   const cli = cac(Object.keys(bin)[0])
 
   cli
-    .command('[webhook]', 'Notify the gif change log to your web hook')
+    .command('[webhook]', 'Notify the git change log to your web hook')
     .option('-f, --format <format>', 'Pretty format option for git log')
     .option('-t, --title <title>', 'Title')
     .action(async (webhook, commandOptions) => {

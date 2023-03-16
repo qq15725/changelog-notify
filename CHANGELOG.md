@@ -1,3 +1,12 @@
+## [0.0.5](https://github.com/qq15725/changelog-notify/compare/v0.0.4...v0.0.5) (2023-03-16)
+
+
+### Bug Fixes
+
+* default log limit ([3934639](https://github.com/qq15725/changelog-notify/commit/393463984faaefd8a0e77492b46e983e82d47fd3))
+
+
+
 ## [0.0.4](https://github.com/qq15725/changelog-notify/compare/v0.0.3...v0.0.4) (2023-03-16)
 
 

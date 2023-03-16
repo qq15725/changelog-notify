@@ -20,16 +20,26 @@
 
 ## 📦 Install
 
-```sh
+```shell
 npm i -g changelog-notify
 ```
 
 ## 🦄 Usage
 
-```sh
+```shell
 cd you-project-root
 
 changelog-notify "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=you-key" \
   --title="### ✅ CI" \
   --format="\n> #%h %s (@%an)"
+```
+
+Cache the current git hash and notify the change log
+
+```shell
+### ✅ CI
+> #ec1faff release: v0.0.1 (@qq15725)
+> #5f49a6f feat: notify to webhook (@qq15725)
+> #78e7c3e feat: init (@qq15725)
+> #39d1f6e Initial commit (@qq15725)
 ```

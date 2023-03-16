@@ -1,3 +1,12 @@
+## [0.0.3](https://github.com/qq15725/changelog-notify/compare/v0.0.1...v0.0.3) (2023-03-16)
+
+
+### Features
+
+* add EOL after the title ([017514d](https://github.com/qq15725/changelog-notify/commit/017514d6a081782154a0ad80ba0b9bfd34d01422))
+
+
+
 ## 0.0.1 (2023-03-16)
 
 

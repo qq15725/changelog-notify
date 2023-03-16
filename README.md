@@ -23,3 +23,11 @@
 ```shell
 npm i changelog-notify
 ```
+
+## 🦄 Usage
+
+```shell
+changelog-notify "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=you-key" \
+  --title="### ✅ CI" \
+  --format="\n> #%h %s (@%an)"
+```

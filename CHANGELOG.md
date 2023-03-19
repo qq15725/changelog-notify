@@ -1,3 +1,12 @@
+# [0.1.0](https://github.com/qq15725/changelog-notify/compare/v0.0.5...v0.1.0) (2023-03-19)
+
+
+### Features
+
+* optimize format ([63a096c](https://github.com/qq15725/changelog-notify/commit/63a096caefe9ee083012db4fe606c4638b44266d))
+
+
+
 ## [0.0.5](https://github.com/qq15725/changelog-notify/compare/v0.0.4...v0.0.5) (2023-03-16)
 
 

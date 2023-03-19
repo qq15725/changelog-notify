@@ -10,6 +10,8 @@ import { bin, name, version } from '../package.json'
 import { cache, lookupFile, normalizePath } from './utils'
 import type { Options } from './types'
 
+const exec = (command: string) => execSync(command, { encoding: 'utf-8' }).trim()
+
 export function createCli(options: Options) {
   const {
     cwd,
@@ -24,7 +26,6 @@ export function createCli(options: Options) {
         ? path.join(path.dirname(pkgPath), `node_modules/.${ name }`)
         : path.join(cwd, `.${ name }`),
   )
-  const cachePath = path.join(cacheDir, 'git_hash')
 
   const cli = cac(Object.keys(bin)[0])
 
@@ -35,26 +36,28 @@ export function createCli(options: Options) {
     .action(async (webhook, commandOptions) => {
       const {
         title = options.title || '',
-        format = options.format || '%h %s @%an',
+        format = options.format || '> %h %ad | %s%d [%an]',
       } = commandOptions
+
+      const branch = exec('git branch --show-current')
+
+      const cachePath = path.join(cacheDir, branch)
+
       const prev = cache(cachePath)
 
-      const current = execSync(
-        'git rev-parse --short HEAD',
-        { encoding: 'utf-8' },
-      ).trim()
+      const current = exec('git rev-parse --short HEAD')
 
       const content = [
         title,
-        execSync(
+        exec(
           [
             'git', 'log',
-            prev ? `${ prev }..${ current }` : '-10',
+            prev ? `${ prev }..${ current }` : '--since="1 weeks ago"',
             '--no-merges',
             `--pretty=format:"${ format }"`,
+            '--date=format:"%m-%d %H:%M:%S"',
           ].filter(Boolean).join(' '),
-          { encoding: 'utf-8' },
-        ).trim(),
+        ),
       ].filter(Boolean).join(os.EOL)
 
       cache(cachePath, current)

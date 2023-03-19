@@ -36,7 +36,7 @@ changelog-notify "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=you-key" 
 
 Cache the current git hash and notify the change log
 
-> default cache path `node_modules/.changelog-notify/git_hash`
+> cache path `node_modules/.changelog-notify/${ current_branch }`
 
 ```shell
 ### ✅ CI
